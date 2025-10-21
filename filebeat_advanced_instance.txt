@@ -25,7 +25,7 @@ filebeat.inputs:
     fields_under_root: true
 
 output.logstash:
-  hosts: ["elk-server:5045"]
+  hosts: [""]
 
 /etc/filebeat/filebeat-auth.yml
 filebeat.inputs:
@@ -38,7 +38,7 @@ filebeat.inputs:
     fields_under_root: true
 
 output.logstash:
-  hosts: ["elk-server:5046"]
+  hosts: [""]
 
 
 -------------------------------------------------------------------
@@ -125,6 +125,7 @@ sudo filebeat -e -c /etc/filebeat/filebeat-test.yml --path.data /var/lib/filebea
 sudo systemctl stop filebeat-fail2ban
 sudo rm -rf /var/lib/filebeat-fail2ban/registry
 sudo filebeat -e -c /etc/filebeat/filebeat-fail2ban.yml --path.data /var/lib/filebeat-fail2ban
+
 
 
 
